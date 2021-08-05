@@ -1,11 +1,14 @@
+#include "ac/enumerate.hpp"
 #include <catch2/catch.hpp>
 #include <vector>
 #include <iostream>
-#include "ac/enumerate.hpp"
 
-TEST_CASE("enumerate") {
+TEST_CASE("basic vector") {
   std::vector a{ 1, 2, 3 };
+  int i = 0;
   for (auto&& [index, item] : a | ac::views::enumerate) {
-    std::cout << "At index " << index << ": " << item;
+    REQUIRE(index == i);
+    REQUIRE(item == i + 1);
+    ++i;
   }
 }

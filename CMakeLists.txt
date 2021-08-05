@@ -40,6 +40,7 @@ target_include_directories(ranges
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
 
+
 if (NOT CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
   add_library(ac::ranges ALIAS ranges)
 endif()
@@ -139,7 +140,7 @@ set(CPACK_GENERATOR ${binary-generators})
 set(CPACK_PACKAGE_FILE_NAME "${PROJECT_NAME}-${PROJECT_VERSION}")
 set(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_FILENAME}")
 
-set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Sy Brand")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Oz Chen")
 
 list(APPEND CPACK_SOURCE_IGNORE_FILES /.git/ /build/ .gitignore .DS_Store)
 
